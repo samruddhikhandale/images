@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       release:
-        description: 'Release branch or tag'
+        description: 'Release branch'
         required: true
         default: 'main'
       image:
@@ -14,7 +14,7 @@ on:
 jobs:
   build-and-push:
     name: Build and push images
-    if: ${{ github.ref == 'refs/heads/main' }}
+    if: ${{ github.ref == *'refs/heads/'* }}
     runs-on: ubuntu-latest
     steps:
     - name: Free more space
