@@ -3,10 +3,6 @@ name: Re-push image
 on:
   workflow_dispatch:
     inputs:
-      release:
-        description: 'Release branch'
-        required: true
-        default: 'main'
       image:
         description: 'Image ID'
         required: true
